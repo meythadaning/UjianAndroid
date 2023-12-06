@@ -38,8 +38,9 @@ public class MainActivity extends AppCompatActivity {
                     // Menghasilkan daftar nama dengan melewatkan bilangan genap dan menambahkan indeks
                     for (int i = 1; i <= 20; i++) {
                         if (i % 2 != 0) { // Skip bilangan genap
-                            String nama_lengkap = isian_nama_depan.concat(" ").concat(isian_nama_belakang);
+                            String nama_lengkap = i + "." + isian_nama_depan + " " + isian_nama_belakang + " " ;
                             daftar_nama.add(nama_lengkap);
+
                         }
                     }
                     edNamaDepan.setText("");

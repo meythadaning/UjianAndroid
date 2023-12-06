@@ -35,9 +35,13 @@ public class MainActivity extends AppCompatActivity {
                 if(isian_nama_depan.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Isian masih kosong", Toast.LENGTH_SHORT).show();
                 }else{
-                    String nama_lengkap = isian_nama_depan.concat(" ").concat(isian_nama_belakang);
-                    daftar_nama.clear();
-                    daftar_nama.add(nama_lengkap);
+                    // Menghasilkan daftar nama dengan melewatkan bilangan genap dan menambahkan indeks
+                    for (int i = 1; i <= 20; i++) {
+                        if (i % 2 != 0) { // Skip bilangan genap
+                            String nama_lengkap = isian_nama_depan.concat(" ").concat(isian_nama_belakang);
+                            daftar_nama.add(nama_lengkap);
+                        }
+                    }
                     edNamaDepan.setText("");
                     edNamaBelakang.setText("");
                     intent_list.putStringArrayListExtra("daftar_nama", daftar_nama);
